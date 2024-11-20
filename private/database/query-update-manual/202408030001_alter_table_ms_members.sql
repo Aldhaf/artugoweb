@@ -1,0 +1,1 @@
+ALTER TABLE ms_members ADD COLUMN ktp CHAR(20) NULL;

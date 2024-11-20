@@ -1,0 +1,1 @@
+ALTER TABLE ms_posts ADD reader enum('customer','employee') NOT NULL DEFAULT 'customer';

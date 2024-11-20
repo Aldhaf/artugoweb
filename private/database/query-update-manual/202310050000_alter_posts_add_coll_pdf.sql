@@ -1,0 +1,1 @@
+ALTER TABLE ms_posts ADD pdf varchar(255) NULL;

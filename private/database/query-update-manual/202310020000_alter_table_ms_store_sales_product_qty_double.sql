@@ -1,0 +1,1 @@
+ALTER TABLE ms_store_sales_product MODIFY COLUMN qty DOUBLE NULL;

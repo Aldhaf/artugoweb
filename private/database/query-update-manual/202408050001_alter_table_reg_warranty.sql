@@ -1,0 +1,2 @@
+ALTER TABLE reg_warranty ADD COLUMN online_store TINYINT DEFAULT 0 NOT NULL;
+ALTER TABLE reg_warranty ADD COLUMN nik_ktp CHAR(30) NULL;

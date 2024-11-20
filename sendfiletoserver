@@ -1,0 +1,5 @@
+path_file=$1
+
+echo "Send File /mnt/data/ROVI/projects/artugo/artugo-website-newui/$path_file to /var/www/$path_file";
+
+scp -P 6612 -i /mnt/data/ROVI/projects/artugo/id_rsa_sshkey/artugo_prod_id_rsa.pem /mnt/data/ROVI/projects/artugo/artugo-website-newui/$path_file root@artugo.co.id:/var/www/$path_file

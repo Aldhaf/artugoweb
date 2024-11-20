@@ -1,0 +1,1 @@
+ALTER TABLE quiz_question MODIFY COLUMN soal VARCHAR(250);

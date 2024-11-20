@@ -1,0 +1,1 @@
+ALTER TABLE quiz_answer ADD deleted_at DATETIME NULL;
