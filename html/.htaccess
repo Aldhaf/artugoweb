@@ -1,0 +1,43 @@
+<IfModule mod_rewrite.c>
+    <IfModule mod_negotiation.c>
+        Options -MultiViews -Indexes
+    </IfModule>
+
+    RewriteEngine On
+    Header always set Content-Security-Policy "upgrade-insecure-requests;"
+
+    # Handle Authorization Header
+    RewriteCond %{HTTP:Authorization} .
+    RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+
+    # Redirect Trailing Slashes If Not A Folder...
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_URI} (.+)/$
+    RewriteRule ^ %1 [L,R=301]
+
+    # Handle Front Controller...
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^ index.php [L]
+
+    #<FilesMatch "\.(html|htm|js|css)$">
+    #    FileETag None
+    #    <IfModule mod_headers.c>
+    #    Header unset ETag
+    #    Header set Cache-Control "max-age=0, no-cache, no-store, must-revalidate"
+    #    Header set Pragma "no-cache"
+    #    Header set Expires "Wed, 12 Jan 1980 05:00:00 GMT"
+    #    </IfModule>
+    #</FilesMatch>
+
+    <FilesMatch "^\.env">
+        Order allow,deny
+        Deny from all
+    </FilesMatch>
+
+</IfModule>
+
+<Files .env>
+    order allow,deny
+    Deny from all
+</Files>
